@@ -56,4 +56,5 @@ This step can also be parallelized with multiple MVF files. Note that I used the
  * Also, the function `--line-buffer` adjusts the number of entries stored in memory at a time, if you’re having memory issues.
 
 ## Find nonsynonymous variants correlated with a trait
+Now let's find the correlated alleles associated with the interpolated water pH as an example trait from Pease et al.. The pH variable is split as a binary trait with acidic (pH <6) and basic (pH >7.5). We use the accession numbers as the sample names. The input trait values to MVFtools look like this: ACIDIC:0436,0429,2933,1322 BASIC:1589,2744,2964,1782,4117A.
 
