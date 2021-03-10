@@ -56,7 +56,10 @@ This step can also be parallelized with multiple MVF files. Note that I used the
  * Also, the function `--line-buffer` adjusts the number of entries stored in memory at a time, if you’re having memory issues.
 
 ## Find nonsynonymous variants correlated with a trait
-Now let's find the correlated alleles associated with the interpolated water pH as an example trait from Pease et al.. The pH variable is split as a binary trait with acidic (pH <6) and basic (pH >7.5). We use the accession numbers as the sample names. The input trait values to MVFtools looks something like this: ACIDIC:0436,0429,2933,1322 BASIC:1589,2744,2964,1782,4117A with the accession name associated with the trait value. The next picture is here as a visual.
+For the exercise we will do only the interpolated water pH contrast from the paper. This is the information from the supplementary data of the paper:
+"Interpolated water pH: 9 accessions total were tested (4 from “acidic” environments (pH ≤ 6); 5 from “basic environments (pH ≥ 7.5). Acidic accessions are che¬-0429, gal-0436, lyc-2933, and neo-1322. Basic accessions are pim-1589, chi-1782, per-2744, per-2964, and chi-4117."
+
+Now let's find the correlated alleles associated with the interpolated water pH on chromosome 1. The pH variable is split as a binary trait with acidic (pH <6) and basic (pH >7.5). We use the accession numbers as the sample names. The input trait values to MVFtools looks something like this: ACIDIC:0436,0429,2933,1322 BASIC:1589,2744,2964,1782,4117A with the accession name associated with the trait value (picture as a visual).
 
 ![Example of trait from Pease et al.](./Tomato_pH_illustration.jpg)
 
@@ -64,7 +67,7 @@ Let's have a look at the `Pease_tomato_codon.mvf` file:
 ![Tomato codon file head](./Tomato_codon.mvf_file.PNG)
 All bam files follow the same structure : `LA*_starmap5.Aligned.out.sorted.bam`.
 
-The next command is a big mouthfull but it is only because of the long names of the bam files within the `Peas_tomato_codon.mvf` file.
+The next command is a big mouthfull but it is only because of the long names of the bam files within the `Pease_tomato_codon.mvf` file.
 If we take a look at the `InferGroupSpecificAllele` function we have the following arguments:
  * `--mvf` for the input mvf file
  * `--out` for the output file
@@ -78,3 +81,5 @@ python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.m
 The job took only 2min for me, and results with two files:
 ![output files](MVFtools_output_files.PNG)
 ![MVFtools_head_pH](MVFtools_head_pH.PNG)
+
+We obtain 11 nonsynonymous changes for chromosome 1 that are associated with water pH.
