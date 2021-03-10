@@ -77,3 +77,4 @@ python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.m
 ```
 The job took only 2min for me, and results with two files:
 ![output files](MVFtools_output_files.PNG)
+![MVFtools_head_pH](MVFtools_head_pH.PNG)
