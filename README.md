@@ -5,11 +5,11 @@ A "reduced" version of the [PhyloGWAS project](https://github.com/wum5/JaltPhylo
 PhyloGWAS leverages shared variance among related species to infer trait evolution among species. The analysis workflow combines GWAS-type mapping approach with phylogenetics models to understand the complex evolution of traits. Because genetic variants are rarely found segregating in wild populations, hybrid phylogenetic-mapping approaches are applied to entire clades in order to identify segregating variants, across species, responsible for trait variation.For instance, by applying ‘PhyloGWAS’ in a clade of wild tomato species resulting from a recent radiation event, Pease et al. (2016) identified genetic variants associated with traits like fruit colour and environmental variability. Additionally, PhyloGWAS presents advantages in clades with ILS by mapping phenotypic trait variation to the segregation of ancient polymorphism thereby avoiding risks of [hemiplasy](https://academic.oup.com/sysbio/article/57/3/503/1666092). This approach can provide the analytic power necessary for identifying genetic regions associated with trait variation in closely-related species.
 
 ## Table of content
- * Outline
- * Dataset
- * Requirements
- * Format conversion with MVFtools
- * Find nonsynonymous variants correlated with a trait
+ * Outline(#outline)
+ * Dataset(#dataset)
+ * Requirements(#requirements)
+ * Format conversion with MVFtools(#format-conversion-with-mvftools)
+ * Find nonsynonymous variants correlated with a trait(#find-nonsynonymous-variants-correlated-with-a-trait)
 
 ## Outline
 In this tutorial, I will present the use of a few functions of the program [MVFtools](https://github.com/peaselab/mvftools) ([Pease and Rosenzweig 2018](http://www.dx.doi.org/10.1109/tcbb.2015.2509997)) necessary for the downstream PhyloGWAS test, using command lines in a Unix/Linux environment. First,  will demonstrate how the conversion from a VCF file to a MVF format is done. Then, I will show how the MF file is converted to a codon format, which will be used for the final step of this short tutorial, finding nonsysnonymous variants associated with a trait.
