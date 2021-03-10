@@ -56,11 +56,24 @@ This step can also be parallelized with multiple MVF files. Note that I used the
  * Also, the function `--line-buffer` adjusts the number of entries stored in memory at a time, if you’re having memory issues.
 
 ## Find nonsynonymous variants correlated with a trait
-Now let's find the correlated alleles associated with the interpolated water pH as an example trait from Pease et al.. The pH variable is split as a binary trait with acidic (pH <6) and basic (pH >7.5). We use the accession numbers as the sample names. The input trait values to MVFtools look like this: ACIDIC:0436,0429,2933,1322 BASIC:1589,2744,2964,1782,4117A.
+Now let's find the correlated alleles associated with the interpolated water pH as an example trait from Pease et al.. The pH variable is split as a binary trait with acidic (pH <6) and basic (pH >7.5). We use the accession numbers as the sample names. The input trait values to MVFtools looks something like this: ACIDIC:0436,0429,2933,1322 BASIC:1589,2744,2964,1782,4117A with the accession name associated with the trait value. The next picture is here as a visual.
 
 ![Example of trait from Pease et al.](./Tomato_pH_illustration.jpg)
 
-Copy/paste the following command in your terminal:
+Let's have a look at the `Pease_tomato_codon.mvf` file:
+![Tomato codon file head](./Tomato_codon.mvf_file.png)
+All bam files follow the same structure : `LA*_starmap5.Aligned.out.sorted.bam`.
+
+The next command is a big mouthfull but it is only because of the long names of the bam files within the `Peas_tomato_codon.mvf` file.
+If we take a look at the `InferGroupSpecificAllele` function we have the following arguments:
+ * `--mvf` for the input mvf file
+ * `--out` for the output file
+ * `--allelegroups` to specify which accession fall in each trait category
+ * and finally `--speciesgroups` to specify a name for the accessions
+
+Now copy/paste the command in your terminal:
 ```
-python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.mvf --out Pease_tomato_pH --allelegroups ACIDIC:LA0436,LA0429,LA2933,LA1322 BASIC:LA1589,LA2744,LA2964,LA1782,LA4117 --speciesgroups GAL:LA0436 CHE:LA0429 LYC:LA2933 NEO:LA1322 PIM:LA1589 PER:LA2744 PER:LA2964 CHI:LA1782 CHI:LA4117
+python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.mvf --out Pease_tomato_pH --allelegroups ACIDIC:LA0436_starmap5.Aligned.out.sorted.bam,LA0429_starmap5.Aligned.out.sorted.bam,LA2933_starmap5.Aligned.out.sorted.bam,LA1322_starmap5.Aligned.out.sorted.bam BASIC:LA1589_starmap5.Aligned.out.sorted.bam,LA2744_starmap5.Aligned.out.sorted.bam,LA2964_starmap5.Aligned.out.sorted.bam,LA1782_starmap5.Aligned.out.sorted.bam,LA4117_starmap5.Aligned.out.sorted.bam --speciesgroups GAL:LA0436_starmap5.Aligned.out.sorted.bam CHE:LA0429_starmap5.Aligned.out.sorted.bam LYC:LA2933_starmap5.Aligned.out.sorted.bam NEO:LA1322_starmap5.Aligned.out.sorted.bam PIM:LA1589_starmap5.Aligned.out.sorted.bam PER:LA2744_starmap5.Aligned.out.sorted.bam PER:LA2964_starmap5.Aligned.out.sorted.bam CHI:LA1782_starmap5.Aligned.out.sorted.bam CHI:LA4117_starmap5.Aligned.out.sorted.bam
 ```
+The job took only 2min for me, and results with two files:
+![output files](MVFtools_output_files.png)
