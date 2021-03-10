@@ -82,4 +82,4 @@ The job took only 2min for me, and results with two files:
 ![output files](MVFtools_output_files.PNG)
 ![MVFtools_head_pH](MVFtools_head_pH.PNG)
 
-We obtain 11 nonsynonymous changes for chromosome 1 that are associated with water pH.
+This should return counts of sites matching the specified trait pattern. We obtain 11 nonsynonymous changes for chromosome 1 that are associated with water pH.
