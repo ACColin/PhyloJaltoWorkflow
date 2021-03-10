@@ -15,7 +15,7 @@ PhyloGWAS leverages shared variance among related species to infer trait evoluti
 In this tutorial, I will present the use of a few functions of the program [MVFtools](https://github.com/peaselab/mvftools) ([Pease and Rosenzweig 2018](http://www.dx.doi.org/10.1109/tcbb.2015.2509997)) necessary for the downstream PhyloGWAS test, using command lines in a Unix/Linux environment. First,  will demonstrate how the conversion from a VCF file to a MVF format is done. Then, I will show how the MF file is converted to a codon format, which will be used for the final step of this short tutorial, finding nonsysnonymous variants associated with a trait.
  
 ## Dataset
-For computational reasons, I will use a subset of the whole data set and use the VCF file of the chromosome 1 of the tomato data available from the original paper on the [Dryad repo](https://datadryad.org/stash/dataset/doi:10.5061/dryad.182dv) or `Pease_etal_SL2.50ch01.vcf.gz` in the tutorial repository. The file contains the combined VCF for all 29 accessions for chromosome 1.
+For computational reasons, I will use a subset of the whole data set and use the VCF file of the chromosome 1 of the tomato data available from the original paper on the [Dryad repo](https://datadryad.org/stash/dataset/doi:10.5061/dryad.182dv). The file contains the combined VCF for all 29 accessions for chromosome 1. You will need to download the file on your own as it is too heavy to include in this repository.
 For more information on the dataset please read the original paper ([Pease et al. 2016](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002379)).
 
 ## Requirements
@@ -24,14 +24,14 @@ For more information on the dataset please read the original paper ([Pease et al
 
 ## Format conversion with MVFtools
 
-Download the file `Pease_etal_SL2.50ch01.vcf.gz` and `gunzip` to obtain the full .vcf file or simply `gunzip` if it is already in your directory.
+Download the file `Pease_etal_SL2.50ch01.vcf.gz` and move it in the `PhyloJaltoWorkflow/` directory. `gunzip` to obtain the full .vcf file.
 
 If you didn't do so already, clone the MVFtools repo in the same directory as the data.
 ```
 git clone https://github.com/peaselab/mvftools.git
 ```
 
-My cluster doesn't use a job management system so I run the code in screen mode but if you do, you can imbed the following command in a bash script and specify the job characteristics (the job should be fairly short depending on the power of your cluster max 3h). Otherwise simply copy/paste and run the following command in screen mode.
+My cluster doesn't use a job management system so I run the code in screen mode but if you do, you can imbed the following command in a bash script and specify the job characteristics (the job is a bit computationaly demending, I would recommand specifying 2h for the walltime). Otherwise simply copy/paste and run the following command in screen mode.
 ```
 python3 mvftools/mvftools.py ConvertVCF2MVF --vcf Pease_etal_SL2.50ch01.vcf --out Pease_etal_SL2.50ch01.mvf
 ```
