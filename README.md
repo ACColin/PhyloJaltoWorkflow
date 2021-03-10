@@ -61,7 +61,7 @@ Now let's find the correlated alleles associated with the interpolated water pH 
 ![Example of trait from Pease et al.](./Tomato_pH_illustration.jpg)
 
 Let's have a look at the `Pease_tomato_codon.mvf` file:
-![Tomato codon file head](./Tomato_codon.mvf_file.png)
+![Tomato codon file head](./Tomato_codon.mvf_file.PNG)
 All bam files follow the same structure : `LA*_starmap5.Aligned.out.sorted.bam`.
 
 The next command is a big mouthfull but it is only because of the long names of the bam files within the `Peas_tomato_codon.mvf` file.
@@ -76,4 +76,4 @@ Now copy/paste the command in your terminal:
 python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.mvf --out Pease_tomato_pH --allelegroups ACIDIC:LA0436_starmap5.Aligned.out.sorted.bam,LA0429_starmap5.Aligned.out.sorted.bam,LA2933_starmap5.Aligned.out.sorted.bam,LA1322_starmap5.Aligned.out.sorted.bam BASIC:LA1589_starmap5.Aligned.out.sorted.bam,LA2744_starmap5.Aligned.out.sorted.bam,LA2964_starmap5.Aligned.out.sorted.bam,LA1782_starmap5.Aligned.out.sorted.bam,LA4117_starmap5.Aligned.out.sorted.bam --speciesgroups GAL:LA0436_starmap5.Aligned.out.sorted.bam CHE:LA0429_starmap5.Aligned.out.sorted.bam LYC:LA2933_starmap5.Aligned.out.sorted.bam NEO:LA1322_starmap5.Aligned.out.sorted.bam PIM:LA1589_starmap5.Aligned.out.sorted.bam PER:LA2744_starmap5.Aligned.out.sorted.bam PER:LA2964_starmap5.Aligned.out.sorted.bam CHI:LA1782_starmap5.Aligned.out.sorted.bam CHI:LA4117_starmap5.Aligned.out.sorted.bam
 ```
 The job took only 2min for me, and results with two files:
-![output files](MVFtools_output_files.png)
+![output files](MVFtools_output_files.PNG)
