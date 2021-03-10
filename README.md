@@ -60,3 +60,7 @@ Now let's find the correlated alleles associated with the interpolated water pH 
 
 ![Example of trait from Pease et al.](./Tomato_pH_illustration.jpg)
 
+Copy/paste the following command in your terminal:
+```
+python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.mvf --out Pease_tomato_pH --allelegroups ACIDIC:LA0436,LA0429,LA2933,LA1322 BASIC:LA1589,LA2744,LA2964,LA1782,LA4117 --speciesgroups GAL:LA0436 CHE:LA0429 LYC:LA2933 NEO:LA1322 PIM:LA1589 PER:LA2744 PER:LA2964 CHI:LA1782 CHI:LA4117
+```
