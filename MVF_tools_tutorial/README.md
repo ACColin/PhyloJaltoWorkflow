@@ -61,10 +61,10 @@ For the exercise we will do only the interpolated water pH contrast from the pap
 
 Now let's find the correlated alleles associated with the interpolated water pH on chromosome 1. The pH variable is split as a binary trait with acidic (pH <6) and basic (pH >7.5). We use the accession numbers as the sample names. The input trait values to MVFtools looks something like this: ACIDIC:0436,0429,2933,1322 BASIC:1589,2744,2964,1782,4117A with the accession name associated with the trait value (picture as a visual).
 
-![Example of trait from Pease et al.](./Tomato_pH_illustration.jpg)
+![Example of trait from Pease et al.](images/Tomato_pH_illustration.jpg)
 
 Let's have a look at the `Pease_tomato_codon.mvf` file:
-![Tomato codon file head](./Tomato_codon.mvf_file.PNG)
+![Tomato codon file head](images/Tomato_codon.mvf_file.PNG)
 All bam files follow the same structure : `LA*_starmap5.Aligned.out.sorted.bam`.
 
 The next command is a big mouthfull but it is only because of the long names of the bam files within the `Pease_tomato_codon.mvf` file.
@@ -79,7 +79,7 @@ Now copy/paste the command in your terminal:
 python3 mvftools/mvftools.py InferGroupSpecificAllele --mvf Pease_tomato_codon.mvf --out Pease_tomato_pH --allelegroups ACIDIC:LA0436_starmap5.Aligned.out.sorted.bam,LA0429_starmap5.Aligned.out.sorted.bam,LA2933_starmap5.Aligned.out.sorted.bam,LA1322_starmap5.Aligned.out.sorted.bam BASIC:LA1589_starmap5.Aligned.out.sorted.bam,LA2744_starmap5.Aligned.out.sorted.bam,LA2964_starmap5.Aligned.out.sorted.bam,LA1782_starmap5.Aligned.out.sorted.bam,LA4117_starmap5.Aligned.out.sorted.bam --speciesgroups GAL:LA0436_starmap5.Aligned.out.sorted.bam CHE:LA0429_starmap5.Aligned.out.sorted.bam LYC:LA2933_starmap5.Aligned.out.sorted.bam NEO:LA1322_starmap5.Aligned.out.sorted.bam PIM:LA1589_starmap5.Aligned.out.sorted.bam PER:LA2744_starmap5.Aligned.out.sorted.bam PER:LA2964_starmap5.Aligned.out.sorted.bam CHI:LA1782_starmap5.Aligned.out.sorted.bam CHI:LA4117_starmap5.Aligned.out.sorted.bam
 ```
 The job took only 2min for me, and results with two files:
-![output files](MVFtools_output_files.PNG)
-![MVFtools_head_pH](MVFtools_head_pH.PNG)
+![output files](images/MVFtools_output_files.PNG)
+![MVFtools_head_pH](images/MVFtools_head_pH.PNG)
 
 This should return counts of sites matching the specified trait pattern. We obtain 11 nonsynonymous changes for chromosome 1 that are associated with water pH.
