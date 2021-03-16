@@ -20,9 +20,12 @@ I will be using the non synonymous calls output file on chromosome 1 from the MV
  
 ## Converting branch lengths to coalescent units from an ultrametric phylogeny
  
- For eucs phylogeny this will be developped after the development of the phylogeny part of the pipeline. :seedling:
+ For the eucs pipeline, this will be developped after building the best ML quartet-based phylogeny. :seedling:
  
 ## Building the *ms* command
+Let's open the bash script to have a look:
+[ms_command_script](images/ms_command_script.PNG)
+
 * The first two numerical arguments specify the number of individuals per locus (14) and the number of loci (10^9)
  * In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance;
  * In our example in tomato chromosome 1, there were 53,748 variable amino acid sites, so this simulated dataset would be broken up into many smaller ones of 53,748 each.
