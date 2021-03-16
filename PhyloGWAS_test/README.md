@@ -30,3 +30,7 @@ Let's open the bash script to have a look:
  * In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance;
  * In our example in tomato chromosome 1, there were 53,748 variable amino acid sites, so this simulated dataset would be broken up into many smaller ones of 53,748 each.
  * s 1 means each locus contains an individual variable site; so really, we are simulating 10 9 independent variable sites
+ * I is used to specify population structure; since this is a phylogeny, we specify 14 populations with a single sample from each one (14 1’s)
+ * After I there are a series of ej commands; these are used to specify population joining events (or, in our case, speciation times)
+ * ej 0.6852423 13 12” means that lineage 13 joins to lineage 12 at time 0.6852423
+ * To construct these commands, you will need an ultrametric phylogeny of the relevant species, and some way to convert the branch lengths to coalescent units
