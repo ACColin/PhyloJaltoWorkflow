@@ -16,8 +16,16 @@ In this tutorial, I will show how to build the *ms* command and define the diffe
 I will be using the non synonymous calls output file on chromosome 1 from the MVFtools tutorial. The simulation requires branch lengths in coalescent units for the 14 accessions. In this case we will be using the best maximum-likelihood quartet-based phylogeny provided by [Pease et al.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002379). 
 
 ## Requirements
- * ***ms* program**: Go to the page http://home.uchicago.edu/~rhudson1/source/mksamples.html, follow the link to the `ms.folder` and download the file `ms.tar.gz`.
- 
+ * ***ms* program**: Go to the page http://home.uchicago.edu/~rhudson1/source/mksamples.html, follow the link to the `ms.folder` and download the file `ms.tar.gz`. To get the software working move `ms.tar.gz` to your `/bin` folder then run the following commands:
+```
+gunzip ms.tar.gz
+tar -xvf ms.tar
+cd msdir
+gcc -o ms ms.c streec.c rand1.c -lm
+```
+This should compile the programs and you should see a `ms` folder in there.
+If the last command doesn't work try `cc -o ms ms.c streec.c rand2.c -lm`.
+
 ## Converting branch lengths to coalescent units from an ultrametric phylogeny
  
 This step is not necessary for the tomato data but will be for the eucs data. This part will be developped after building the best ML quartet-based phylogeny. :seedling:
@@ -35,6 +43,12 @@ Note: I kept the line breaks in this picture but it might be necessary to remove
  * `-I` is used to specify population structure; since this is a phylogeny, we specify 29 populations with 2 samples from each one (29 2’s)
  * the `-ej` commands are originally used to specify population joining events but in our case this will be translated in speciation times. For example, `-ej 0.6852423 13 12` means that lineage 13 joins to lineage 12 at time 0.6852423
  * To construct these commands, you will need an ultrametric phylogeny of the relevant species, and some way to convert the branch lengths to coalescent units
+
+- You will also need a numerical key for each species. After lineage joining events, the ancestral population takes on the smaller numerical ID; i.e. the ancestral population of 13 and 12 is 12 after time 0.6852423 in the past.
+- Important: ms uses units of 4N generations, rather than the standard 2N for coalescent units. Differences in effective population size can be incorporated by rescaling the branch lengths.
+
+To run the script change the path to the *ms* software in the `$OD` variable, as well as the path specified for `cd` where you want the output to be saved.
+
 
 ## Evaluating the significance from *ms* output
 
