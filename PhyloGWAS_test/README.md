@@ -25,6 +25,7 @@ This step is not necessary for the tomato data but will be for the eucs data. Th
 ## Building the *ms* command
 I made a script and pasted the *ms* command of Pease et al. available in the supplementary material under "PhyloGWAS analysis":
 ![ms_command_script](images/mscommand_script.PNG)
+
 Note: I kept the line breaks in this picture but it might be necessary to remove them to run *ms*.
 
 * The first two numerical arguments specify the number of individuals per locus (58) and the number of loci (10^9)
