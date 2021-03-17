@@ -1,5 +1,7 @@
 # PhyloJaltoWorkflow
 A "reduced" version of the PhyloGWAS project (https://github.com/wum5/JaltPhylo) to practice on the workflow, packages and functions.
 
+Original paper: Pease JB, Haak DC, Hahn MW, Moyle LC (2016) Phylogenomics Reveals Three Sources of Adaptive Variation during a Rapid Radiation. PLoS Biol 14(2): e1002379. doi:10.1371/journal.pbio.1002379
+
 ## Summary
 PhyloGWAS leverages shared variance among related species to infer trait evolution among species. The analysis workflow combines GWAS-type mapping approach with phylogenetics models to understand the complex evolution of traits. Because genetic variants are rarely found segregating in wild populations, hybrid phylogenetic-mapping approaches are applied to entire clades in order to identify segregating variants, across species, responsible for trait variation.For instance, by applying ‘PhyloGWAS’ in a clade of wild tomato species resulting from a recent radiation event, Pease et al. (2016) identified genetic variants associated with traits like fruit colour and environmental variability. Additionally, PhyloGWAS presents advantages in clades with ILS by mapping phenotypic trait variation to the segregation of ancient polymorphism thereby avoiding risks of [hemiplasy](https://academic.oup.com/sysbio/article/57/3/503/1666092). This approach can provide the analytic power necessary for identifying genetic regions associated with trait variation in closely-related species.
