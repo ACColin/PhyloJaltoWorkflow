@@ -23,14 +23,17 @@ I will be using the non synonymous calls output file on chromosome 1 from the MV
 This step is not necessary for the eucs data. This part will be developped after building the best ML quartet-based phylogeny. :seedling:
  
 ## Building the *ms* command
-Let's open the bash script to have a look:
+This is what the ms command looks like in the materials and methods of Pease et al.:
 ![ms_command_script](images/ms_command_script.PNG)
 
-* The first two numerical arguments specify the number of individuals per locus (14) and the number of loci (10^9)
+* The first two numerical arguments specify the number of individuals per locus (58) and the number of loci (10^9)
  * In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance;
  * In our example in tomato chromosome 1, there were 53,748 variable amino acid sites, so this simulated dataset would be broken up into many smaller ones of 53,748 each.
- * s 1 means each locus contains an individual variable site; so really, we are simulating 10 9 independent variable sites
- * I is used to specify population structure; since this is a phylogeny, we specify 14 populations with a single sample from each one (14 1’s)
- * After I there are a series of ej commands; these are used to specify population joining events (or, in our case, speciation times)
- * ej 0.6852423 13 12” means that lineage 13 joins to lineage 12 at time 0.6852423
+ * `-s 1` means each locus contains an individual variable site; so really, we are simulating 10^9 independent variable sites
+ * `-I` is used to specify population structure; since this is a phylogeny, we specify 29 populations with 2 samples from each one (29 2’s)
+ * the `-ej` commands are originally used to specify population joining events but in our case this will be translated in speciation times. For example, `-ej 0.6852423 13 12` means that lineage 13 joins to lineage 12 at time 0.6852423
  * To construct these commands, you will need an ultrametric phylogeny of the relevant species, and some way to convert the branch lengths to coalescent units
+
+## Evaluating the significance from *ms* output
+
+Once the *ms* job is done running, I use the *ms* simulation output,  
