@@ -48,9 +48,11 @@ Note: I kept the line breaks in this picture but it might be necessary to remove
 The command requires a species:number key. After lineage joining events, the ancestral population takes on the smaller numerical ID. For example in Pease's case, the ancestral population of 13 and 12 is 12 after time 0.6852423 in the past.
 Important: ms uses units of **4N generations** instead of the standard 2N for coalescent units. Differences in effective population size can be incorporated by rescaling the branch lengths.
 
-To run the script change the path to the *ms* software in the `$OD` variable, as well as the path specified for `cd` where you want the output to be saved.
-
+To run the script change the path to the *ms* software in the `$OD` variable, as well as the path specified for `cd` where you want the output to be saved. The job might take a while so it's good to have it running overnight.
+This script will simulate over the full phylogeny (27 accessions as you can see on the script), then we can pull the relevant accessions out of the full simulated dataset to test for the pattern of a trait. The specific accessions are given with the species:number key; we see how it's done in the following section.
 
 ## Evaluating the significance from *ms* output
 
-Once the *ms* job is done running, I use the *ms* simulation output,  
+The *ms* simulation output is used to run the `phyloGWAS_pval.py` python script which will evaluate the significance of the output from the *ms* simulation.
+
+
