@@ -37,6 +37,7 @@ I made a script and pasted the *ms* command of Pease et al. available in the sup
 Note: I kept the line breaks in this picture but it might be necessary to remove them to run *ms*.
 
  * The first two numerical arguments specify the number of individuals per locus (58) and the number of loci ($10^9$). In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance. In our example in tomato chromosome 1, there were **53,748 variable amino acid sites**, so this simulated dataset would be broken up into many smaller ones of 53,748 each.
+
 ![output_MVFtools](images/MVFtools_head_pH.PNG)
 
  * `-s 1` means each locus contains an individual variable site; so really, we are simulating 10^9 independent variable sites.
