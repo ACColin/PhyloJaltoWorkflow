@@ -20,7 +20,7 @@ I will be using the non synonymous calls output file on chromosome 1 from the MV
  
 ## Converting branch lengths to coalescent units from an ultrametric phylogeny
  
- For the eucs pipeline, this will be developped after building the best ML quartet-based phylogeny. :seedling:
+This step is not necessary for the eucs data. This part will be developped after building the best ML quartet-based phylogeny. :seedling:
  
 ## Building the *ms* command
 Let's open the bash script to have a look:
