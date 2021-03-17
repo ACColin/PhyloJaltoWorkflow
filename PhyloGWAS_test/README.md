@@ -24,7 +24,7 @@ This step is not necessary for the eucs data. This part will be developped after
  
 ## Building the *ms* command
 This is what the ms command looks like in the materials and methods of Pease et al.:
-![ms_command_script](images/ms_command_script.PNG)
+![ms_command_script](images/mscommand_script.PNG)
 
 * The first two numerical arguments specify the number of individuals per locus (58) and the number of loci (10^9)
  * In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance;
