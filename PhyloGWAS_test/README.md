@@ -16,15 +16,16 @@ In this tutorial, I will show how to build the *ms* command and define the diffe
 I will be using the non synonymous calls output file on chromosome 1 from the MVFtools tutorial. The simulation requires branch lengths in coalescent units for the 14 accessions. In this case we will be using the best maximum-likelihood quartet-based phylogeny provided by [Pease et al.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002379). 
 
 ## Requirements
- * ***ms* program**: Go to the page `http://home.uchicago.edu/~rhudson1/source/mksamples.html`, follow the link to the `ms.folder` and download the file `ms.tar.gz`.
+ * ***ms* program**: Go to the page http://home.uchicago.edu/~rhudson1/source/mksamples.html, follow the link to the `ms.folder` and download the file `ms.tar.gz`.
  
 ## Converting branch lengths to coalescent units from an ultrametric phylogeny
  
-This step is not necessary for the eucs data. This part will be developped after building the best ML quartet-based phylogeny. :seedling:
+This step is not necessary for the tomato data but will be for the eucs data. This part will be developped after building the best ML quartet-based phylogeny. :seedling:
  
 ## Building the *ms* command
-This is what the ms command looks like in the materials and methods of Pease et al.:
+I made a script and pasted the *ms* command of Pease et al. available in the supplementary material under "PhyloGWAS analysis":
 ![ms_command_script](images/mscommand_script.PNG)
+Note: I kept the line breaks in this picture but it might be necessary to remove them to run *ms*.
 
 * The first two numerical arguments specify the number of individuals per locus (58) and the number of loci (10^9)
  * In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance;
