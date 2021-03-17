@@ -36,16 +36,16 @@ I made a script and pasted the *ms* command of Pease et al. available in the sup
 
 Note: I kept the line breaks in this picture but it might be necessary to remove them to run *ms*.
 
-The first two numerical arguments specify the number of individuals per locus (58) and the number of loci ($10^9$). In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance. In our example in tomato chromosome 1, there were 53,748 variable amino acid sites, so this simulated dataset would be broken up into many smaller ones of 53,748 each.
+ * The first two numerical arguments specify the number of individuals per locus (58) and the number of loci ($10^9$). In Pease et al. and Wu et al., these very large simulated datasets are partitioned into smaller ones later on to test significance. In our example in tomato chromosome 1, there were **53,748 variable amino acid sites**, so this simulated dataset would be broken up into many smaller ones of 53,748 each.
 ![output_MVFtools](images/MVFtools_head_pH.PNG)
 
- * `-s 1` means each locus contains an individual variable site; so really, we are simulating 10^9 independent variable sites
+ * `-s 1` means each locus contains an individual variable site; so really, we are simulating 10^9 independent variable sites.
  * `-I` is used to specify population structure; since this is a phylogeny, we specify 29 populations with 2 samples from each one (29 2’s)
- * the `-ej` commands are originally used to specify population joining events but in our case this will be translated in speciation times. For example, `-ej 0.6852423 13 12` means that lineage 13 joins to lineage 12 at time 0.6852423
- * To construct these commands, you will need an ultrametric phylogeny of the relevant species, and some way to convert the branch lengths to coalescent units
+ * the `-ej` commands are used to specify population joining events but considering our input data, this will be translated in speciation times. For example, `-ej 0.6852423 13 12` means that lineage 13 joins to lineage 12 at time 0.6852423.
+ * To construct these commands, you will need an ultrametric phylogeny of the relevant species, and some way to convert the branch lengths to coalescent units.
 
-- You will also need a numerical key for each species. After lineage joining events, the ancestral population takes on the smaller numerical ID; i.e. the ancestral population of 13 and 12 is 12 after time 0.6852423 in the past.
-- Important: ms uses units of 4N generations, rather than the standard 2N for coalescent units. Differences in effective population size can be incorporated by rescaling the branch lengths.
+The command requires a species:number key. After lineage joining events, the ancestral population takes on the smaller numerical ID. For example in Pease's case, the ancestral population of 13 and 12 is 12 after time 0.6852423 in the past.
+Important: ms uses units of **4N generations** instead of the standard 2N for coalescent units. Differences in effective population size can be incorporated by rescaling the branch lengths.
 
 To run the script change the path to the *ms* software in the `$OD` variable, as well as the path specified for `cd` where you want the output to be saved.
 
