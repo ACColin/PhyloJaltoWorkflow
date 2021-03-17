@@ -54,5 +54,12 @@ This script will simulate over the full phylogeny (27 accessions as you can see 
 ## Evaluating the significance from *ms* output
 
 The *ms* simulation output is used to run the `phyloGWAS_pval.py` python script which will evaluate the significance of the output from the *ms* simulation.
+The script is available in the `/src` folder:
+![phyloGWAS_pval_script](images/phyloGWAS_pval_script.PNG)
+![phyloGWAS_pval_args](images/phyloGWAS_pval_args.PNG)
 
-
+The script takes four arguments:
+* `-i` the codon MVF file
+* `-m` for the output ms file
+* `-p` for the expected trait pattern, the argument should be a string of binaries specifying the trait's character for each tested accessions, **SPECIFY THE ORDER HERE ONCE YOU KNOW**
+* `-n` which is the expected number of matching sites as observed in the empirical data.
