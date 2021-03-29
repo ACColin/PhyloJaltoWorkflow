@@ -1,0 +1,8 @@
+rule MVFtools_vcf2mvf:
+	input:
+	    vcf="data/Pease_etal_SL2.50ch01.vcf"
+	output:
+	    mvf="data/Pease_etal_SL2.50ch01.mvf"
+	shell:
+	    "python3 mvftools/mvftools.py ConvertVCF2MVF --vcf {input.vcf} --out {output.mvf}
+

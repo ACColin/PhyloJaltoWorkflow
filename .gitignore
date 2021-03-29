@@ -1,3 +1,7 @@
+# heavy data
+/PhyloGWAS_test/ms_sim_tomato_ch1.txt
+/PhyloGWAS_test/seedms
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
