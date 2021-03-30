@@ -97,5 +97,5 @@ The script is available in the `/src` folder:
 The script takes four arguments:
 * `-i` the codon MVF file
 * `-m` for the output ms file
-* `-p` for the expected trait pattern, the argument should be a string of binaries specifying the trait's character for each tested accessions, **SPECIFY THE ORDER HERE ONCE YOU KNOW**
+* `-p` for the expected trait pattern, the argument should be a string of binaries specifying the trait's character for each tested accessions in ascending order of the phylogeny.
 * `-n` which is the expected number of matching sites as observed in the empirical data.
