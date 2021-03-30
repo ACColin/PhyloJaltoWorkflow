@@ -46,6 +46,42 @@ Note: I kept the line breaks in this picture but it might be necessary to remove
  * To construct these commands, you will need an ultrametric phylogeny of the relevant species, and some way to convert the branch lengths to coalescent units.
 
 The command requires a species:number key. After lineage joining events, the ancestral population takes on the smaller numerical ID. For example in Pease's case, the ancestral population of 13 and 12 is 12 after time 0.6852423 in the past.
+
+Find under the species accession:number key for the ms simulation in Pease's 
+Accession | Number key
+----|---
+S. lycopersicum  3475|29
+S. lyco “Heinz 1706”|28
+S. galapagense 0436|27
+S. galapagense 3909|26
+S. cheesmaniae 0429|25
+S. cheesmaniae 3124|24
+S. pimpinellifolium 1269|23
+S. pimpinellifolium 1589|22
+S. lycopersicum 2933|21
+S. chmielewskii 1028|20
+S. chmielewskii 1316|19
+S. neorickii 1322|18
+S. neorickii 2133|17
+S. arcanum 2172|16
+S. huaylasense 1364|15
+S. peruvianum 2744|14
+S. huaylasense 1358|13
+S. corneliomulleri 0107|12
+S. corneliomulleri 0444|11
+S. peruvianum 2964|10
+S. chilense 1782|9
+S. chilense 4117A|8
+S. pennellii 0716|7
+S. pennellii 3778|6
+S. habrochaites 0407|5
+S. habrochaites 1777|4
+S. lycopersicoides 2951|3
+S. lycopersicoides 4126|2
+S. sitiens 4116|1
+
+![accession_number_key](images/accession_number_key.PNG)
+
 Important: ms uses units of **4N generations** instead of the standard 2N for coalescent units. Differences in effective population size can be incorporated by rescaling the branch lengths.
 
 To run the script change the path to the *ms* software in the `$OD` variable, as well as the path specified for `cd` where you want the output to be saved. The job might take a while so it's good to have it running overnight.
