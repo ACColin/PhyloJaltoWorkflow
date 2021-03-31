@@ -100,4 +100,4 @@ The script takes four arguments:
 * `-p` for the expected trait pattern, the argument should be a string of binaries specifying the trait's character for each tested accessions in ascending order of the phylogeny.
 * `-n` which is the expected number of matching sites as observed in the empirical data.
 
-`python3 src/phyloGWAS_pval.py  -i data/tomato_codon.mvf -m ms_sim_tomato_ch1.txt -p 0`
+`python3 src/phyloGWAS_pval.py  -i data/tomato_codon.mvf -m ms_sim_tomato_ch1.txt -p 000101111 -n `
