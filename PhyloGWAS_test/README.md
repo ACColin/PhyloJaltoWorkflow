@@ -105,4 +105,11 @@ The original script in Wu and Pease's papers is written in python2. For the repr
  * Then, there will be the possibility to have a binary trait string with a differing number of accession compared to the phylogeny included in the ms simulation, giving the possibility to try variant calling for a differing number of accessions. This is not an option in the original script where the binary string needs to be the same length as the number of accessions (each accession included in the ms simulation needs to have a trait character to be tested with phyloGWAS).
  * Additionally the original script does not check if the binary string length matches the number of accessions tested. Therefore no error message pops up to state if the string is a different length and the binary trait data is not provided for all species. This is particularly risky for long strings, where it is easy to include a coding error as the binary string is included manually. For example I ran the script with a binary trait string shorter than the number of accessions tested, no error message appeared and the script output provides a single p-value and the number of simulations tested (see below). The script for the eucs data will contain additional coding to put this as a requirement to run the script.
 
+By running the following command:
 `python3 src/phyloGWAS_pval.py  -i data/tomato_codon.mvf -m ms_sim_tomato_ch1.txt -p 000101111 -n 11`
+I get this output:
+```
+(base) [u90946881@hie-general1 phylo_calls_snakemake]$ cat pval_script_test_output.txt 
+number of simulations (156):
+range: 0 - 0, mean: 0.00, pval < 0.006410
+```
