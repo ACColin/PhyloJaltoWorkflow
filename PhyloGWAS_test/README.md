@@ -99,6 +99,7 @@ The script takes four arguments:
 * `-m` for the output ms file
 * `-p` for the expected trait pattern, the argument should be a string of binaries specifying the trait's character for each tested accessions in ascending order of the phylogeny.
 * `-n` which is the expected number of matching sites as observed in the empirical data.
+
 The original script in Wu and Pease's papers is written in python2. For the reproducible/transposable pipeline use on eucs data, the script will be written in python3 for simplicity. The script for the eucs data will contain modifications:
  * As stated above, the script will be written in python3 not python2
  * Then, there will be the possibility to have a binary trait string with a differing number of accession compared to the phylogeny included in the ms simulation, giving the possibility to try variant calling for a differing number of accessions. This is not an option in the original script where the binary string needs to be the same length as the number of accessions (each accession included in the ms simulation needs to have a trait character to be tested with phyloGWAS).
