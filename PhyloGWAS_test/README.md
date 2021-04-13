@@ -114,4 +114,4 @@ number of simulations (156):
 range: 0 - 0, mean: 0.00, pval < 0.006410
 ```
 
-As the script does not specify how the binary trait string is used, I am not sure how it works so far. **Updated to come**
+As the script does not specify how the binary trait string is used, I am not sure how it works so far. **Updates to come**
