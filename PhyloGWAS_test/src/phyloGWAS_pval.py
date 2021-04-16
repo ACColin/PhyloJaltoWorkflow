@@ -97,7 +97,7 @@ def main():
 	pval = pval_cal(output, expected_num)
 
 	print "number of simulations (%d):" % (len(output))
-	print "range: %d - %d, mean: %.2f, pval < %f" % (min_val, max_val, avg_val, pval)
+        print "range: %d - %d, mean: %.2f, pval < %f" % (min_val, max_val, avg_val, pval)
 	
 
 if __name__ == "__main__":

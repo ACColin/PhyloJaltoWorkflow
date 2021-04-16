@@ -1,7 +1,7 @@
-name: snakephylocall
+name: p2.7
 channels:
         - conda-forge
         - bioconda
 dependencies:
-        - python=3.*
-        - snakemake
+        - python=2.7
+        - numpy

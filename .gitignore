@@ -1,8 +1,11 @@
 # heavy data
+/PhyloGWAS_test/data/*.mvf
+/PhyloGWAS_test/data/*.vcf
+/phylo_calls_snakemake/data/*.mvf
+/phylo_calls_snakemake/ms_sim_tomato_ch1.txt
 /PhyloGWAS_test/ms_sim_tomato_ch1.txt
 /PhyloGWAS_test/seedms
-/phylo_calls_snakemake/data/Pease_etal_SL2.50ch01.mvf
-/phylo_calls_snakemake/data/Pease_etal_SL2.50ch01.vcf
+/phylo_calls_snakemake/data/*.vcf
 /phylo_calls_snakemake/data/Pease_tomato_pH.total
 
 # Byte-compiled / optimized / DLL files
