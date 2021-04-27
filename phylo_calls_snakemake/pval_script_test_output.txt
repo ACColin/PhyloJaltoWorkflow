@@ -1,2 +1,0 @@
-number of simulations (156):
-range: 0 - 0, mean: 0.00, pval < 0.006410

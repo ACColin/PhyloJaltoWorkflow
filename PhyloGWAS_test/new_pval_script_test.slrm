@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH -J new_pval_test
+#SBATCH -p general
+#SBATCH -o /N/slate/mhibbins/outputs/%j.txt
+#SBATCH -e /N/slate/mhibbins/outputs/%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=mhibbins@iu.edu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=40:00:00
+#SBATCH --mem=8GB
+
+module unload python/2.7.5
+module load python/3.8.2
+cd /N/slate/mhibbins/eucs_phylogwas/new_pval_script_test/ 
+python3 new_phyloGWAS_pval_v2.py -i Pease_tomato_pH.txt.total -m ../pease_ch01_ms_1sam_sims.txt -p 27:0,25:0,21:0,18:0,22:1,14:1,10:1,9:1,8:1 > new_phylogwas_pval_test.txt
