@@ -4,8 +4,8 @@ rule ms_simulation:
         conda:
            "envs/environment.yml"
 	shell:
-	   "python3"
-	   "conda deactivate"
+	   "./ms_sim_script.sh > {output.ms_sim}"
+
 rule PhyloGWAS_pval:
 	inuput:
 	   mvf_file=""
