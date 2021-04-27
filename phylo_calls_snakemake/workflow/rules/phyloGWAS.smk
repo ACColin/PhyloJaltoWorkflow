@@ -1,16 +1,19 @@
 rule ms_simulation:
 	output:
-	   ms_sim="outputs/ms_sim.txt"
+	   ms_sim="outputs/ms_sim_{chromosome}.txt"
         conda:
            "envs/environment.yml"
 	shell:
 	   "./ms_sim_script.sh > {output.ms_sim}"
 
+def get_binary_trait_string(traitstring):
+	return config["samples"][traitstring.sample]
+
 rule PhyloGWAS_pval:
 	inuput:
-	   mvf_file=""
-	   ms_file=""
-	   pattern=""
+	   mvf_file="data/{chromosome}.mvf"
+	   ms_file="outputs/ms_sim_{chromosome}.txt"
+	   get_binary_trait_string
 	   expected_num=""
 	output:
 	   pval: "phylo_pval_output.txt"
