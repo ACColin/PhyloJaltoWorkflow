@@ -112,3 +112,6 @@ I get this output:
 number of simulations (156):
 range: 0 - 0, mean: 0.00, pval < 0.006410
 ```
+This is the new command to run the pval script:
+```
+```
