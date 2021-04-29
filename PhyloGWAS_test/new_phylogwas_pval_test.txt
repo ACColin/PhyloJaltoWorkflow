@@ -1,0 +1,4 @@
+Expected 11 variants
+In 18605 simulations:
+Saw as many as 4 and as few as 0
+p < 5.374899220639613e-05

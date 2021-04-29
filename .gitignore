@@ -13,7 +13,6 @@
 /phylo_calls_snakemake/data/Pease_tomato_pH.total
 
 /PhyloGWAS_test/.new_pval_script_test.slrm.swp
-/PhyloGWAS_test/new_phylogwas_pval_test.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
