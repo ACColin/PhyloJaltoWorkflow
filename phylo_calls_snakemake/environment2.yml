@@ -1,7 +1,0 @@
-name: p2.7
-channels:
-        - conda-forge
-        - bioconda
-dependencies:
-        - python=2.7
-        - numpy

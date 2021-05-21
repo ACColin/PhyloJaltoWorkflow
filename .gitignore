@@ -1,12 +1,18 @@
 # heavy data
 /PhyloGWAS_test/data/*.mvf
 /PhyloGWAS_test/data/*.vcf
+
 /phylo_calls_snakemake/data/*.mvf
 /phylo_calls_snakemake/ms_sim_tomato_ch1.txt
+/phylo_calls_snakemake/outputs/
+
 /PhyloGWAS_test/ms_sim_tomato_ch1.txt
 /PhyloGWAS_test/seedms
+
 /phylo_calls_snakemake/data/*.vcf
 /phylo_calls_snakemake/data/Pease_tomato_pH.total
+
+/PhyloGWAS_test/.new_pval_script_test.slrm.swp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
